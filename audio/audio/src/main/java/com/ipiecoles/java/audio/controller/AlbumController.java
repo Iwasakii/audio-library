@@ -16,19 +16,24 @@ public class AlbumController {
     @Autowired
     private ArtistRepository artistRepository;
 
+//    @PostMapping
+//    public Artist addAlbumToArtist(
+//         @PathVariable("idArtist") Long idArtist,
+//         @RequestBody String title
+//    ) {
+//        Artist artist= artistRepository.findById(idArtist).get();
+//        Album album = albumRepository.findByTitle(title);
+//
+//        album.setArtist(artist);
+//
+//        albumRepository.save(album);
+//
+//        return artist;
+//    }
+
     @PostMapping
-    public Artist addAlbumToArtist(
-         @PathVariable("idArtist") Long idArtist,
-         @RequestBody String title
-    ) {
-        Artist artist= artistRepository.findById(idArtist).get();
-        Album album = albumRepository.findByTitle(title);
-
-        album.setArtist(artist);
-
-        albumRepository.save(album);
-
-        return artist;
+    public Album createAlbum(@RequestBody Album album) {
+        return albumRepository.save(album);
     }
 
 
