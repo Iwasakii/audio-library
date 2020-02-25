@@ -79,7 +79,6 @@ public class ArtistController {
             produces = MediaType.APPLICATION_JSON_VALUE
     )
     public Artist modifierArtist(
-            // Pour gérer les erreurs plus tard
             @PathVariable("id") Long idEmploye,
             @RequestBody Artist artist
     ) {
