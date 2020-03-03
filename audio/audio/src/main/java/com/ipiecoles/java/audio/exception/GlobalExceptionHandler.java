@@ -31,6 +31,7 @@ public class GlobalExceptionHandler {
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     protected String handleConversionFailedException(HttpRequestMethodNotSupportedException ex) {
         return "La commande " + ex.getMethod() + " n'est pas autorisée.";
+
     }
 
 
