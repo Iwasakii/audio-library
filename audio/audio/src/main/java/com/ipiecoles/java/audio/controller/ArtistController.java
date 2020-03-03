@@ -81,9 +81,9 @@ public class ArtistController {
     public Artist modifierArtist(
             @PathVariable("id") Long idEmploye,
             @RequestBody Artist artist
-    ) {
+    ) throws ConflictException {
         if(artistRepository.existsById(idEmploye)) {
-            
+            throw new ConflictException("Cet artist existe déjà portant comme nom : " + artist.getName());
         }
         return artistRepository.save(artist);
     }
