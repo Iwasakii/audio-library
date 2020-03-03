@@ -82,6 +82,9 @@ public class ArtistController {
             @PathVariable("id") Long idEmploye,
             @RequestBody Artist artist
     ) {
+        if(artistRepository.existsById(idEmploye)) {
+            
+        }
         return artistRepository.save(artist);
     }
 
